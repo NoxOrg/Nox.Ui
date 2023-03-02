@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise" Version="1.2.1" />
+    <PackageReference Include="Blazorise.Bootstrap" Version="1.2.1" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nox.Ui.Data\Nox.Ui.Data.csproj" />
+    <ProjectReference Include="..\Nox.Ui.Models\Nox.Ui.Models.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+﻿@using Nox.Ui
+@using Nox.Ui.Models
+
+@inherits ControlIntBase
+
+<Field>
+    <FieldLabel>@entityAttributeDefinition.name</FieldLabel>
+    <NumericEdit Value="10">
+        <FieldHelp>@entityAttributeDefinition.description</FieldHelp>
+    </NumericEdit>
+</Field>

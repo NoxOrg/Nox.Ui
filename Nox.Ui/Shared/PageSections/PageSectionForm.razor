@@ -1,0 +1,26 @@
+﻿@using Nox.Ui.Shared.Controls
+@inherits PageSectionFormBase
+
+@if (entityDefinition != null && entityDefinition.attributes != null && entityDefinition.attributes.Count > 0)
+{
+    //fieldset section
+    <Card Style="margin-bottom: 15px;">
+        <CardBody>
+            <Fields>
+                @foreach (Models.entityAttributeDefinition currentEntityAttibuteDefinition in entityDefinition.attributes)
+                {
+                    @switch (currentEntityAttibuteDefinition.type)
+                    {
+                        case Models.entityAttributeType.Int:
+                            <ControlInt entityAttributeDefinition="currentEntityAttibuteDefinition" />
+                        break;
+                        case Models.entityAttributeType.String:
+                        default:
+                            <ControlString entityAttributeDefinition="currentEntityAttibuteDefinition" />
+                        break;
+                    }
+                }
+            </Fields>
+        </CardBody>
+    </Card>
+}

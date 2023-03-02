@@ -1,0 +1,28 @@
+﻿@using Nox.Ui
+@using Nox.Ui.Models
+
+@inherits NavMenuBase
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">
+            @if (globalDefinition != null)
+            { @globalDefinition.displayTitle }</a>
+    </div>
+</div>
+
+@if (navigationDefinitions != null)
+{
+    <div>
+        <nav class="flex-column">
+            @foreach (navigationDefinition currentNavDefinition in navigationDefinitions)
+            {
+                <div class="nav-item px-3">
+                <NavLink class="nav-link" href="@currentNavDefinition.pageId" Match="NavLinkMatch.All">
+                        <span class="oi oi-chevron-right" style="margin-top:5px;" aria-hidden="true"></span> @currentNavDefinition.name
+                    </NavLink>
+                </div>
+            }
+        </nav>
+    </div>
+}

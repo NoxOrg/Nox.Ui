@@ -1,0 +1,35 @@
+﻿globalDefinition:
+  displayTitle: Nox.Ui Demo
+
+navigationDefinition:
+  - 
+    orderId: 1
+    name: Demo Page A
+    pageId: DemoPageA
+  - 
+    orderId: 2
+    name: Demo Page B
+    pageId: DemoPageB
+
+pageDefinition:
+  - 
+    pageId: DemoPageA
+    isDefault: true
+    name: Display Demo Page A
+    pageSections:
+      - 
+        name: Display Demo Page Section A
+        type: Title
+        orderId: 1
+      - 
+        type: EntityList
+        orderId: 2
+  - 
+    pageId: DemoPageB
+    isDefault: false
+    name: Display Demo Page B
+    pageSections:
+      - 
+        name: Display Demo Page Section B
+        type: Title
+        orderId: 1

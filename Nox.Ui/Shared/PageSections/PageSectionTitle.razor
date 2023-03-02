@@ -1,0 +1,13 @@
+﻿@inherits PageSectionTitleBase
+
+@if (pageSectionDefinition != null)
+{
+    //normal section
+<Card Style="margin-bottom: 15px;">
+    <CardBody>
+        <CardTitle Size="3">
+            @pageSectionDefinition.name
+        </CardTitle>
+    </CardBody>
+</Card>
+}

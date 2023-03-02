@@ -1,0 +1,44 @@
+﻿@page "/"
+@page "/{pageId}"
+@using Nox.Ui.Shared.PageSections
+@using Nox.Ui.Shared.Controls
+
+@inherits MainDynamicBodyBase
+
+@if (currentPageDefinition != null)
+{
+    //MainPageBuild
+
+    if (currentPageDefinition.pageSections != null && currentPageDefinition.pageSections.Count > 0)
+    {
+        @foreach (Models.pageSectionDefinition currentPageSectionDefinition in currentPageDefinition.pageSections.OrderBy(x => x.orderId))
+        {
+            @switch (currentPageSectionDefinition.type)
+            {
+                case Models.pageSectionType.Title:
+
+                    <PageSectionTitle pageSectionDefinition="currentPageSectionDefinition" />
+
+                break;
+                case Models.pageSectionType.EntityList:
+
+                    <PageSectionForm entityDefinition="entityDefinition" />
+
+                break;
+            }           
+        }        
+    }
+}
+else
+{
+    <Card>
+        <CardBody Background="Background.Warning">
+            <CardTitle Size="3">
+                Page Error
+            </CardTitle>
+            <CardText>
+                Sorry unable to find the Page
+            </CardText>
+        </CardBody>
+    </Card>    
+}
